@@ -96,16 +96,18 @@ int main()
                     for (int i=0; i<boxes; i++) {
                         
                         //cout<<num[i][0]<<endl;
-                        
+                        if (i!=0){
                         if (symbols[j]=='-') {
                             sign=-1;
+                            j++;
                         }
                         else {
                             sign=1;
-                        }
+                            j++;
+                        }}
                         result[i]=num[i][0];
                         
-                        //cout<<symbols[j];
+                        cout<<symbols[j];
                         
                         for (int k=1;symbols[j]=='*'||symbols[j]=='/'; j++,k++) {
                             
@@ -120,8 +122,11 @@ int main()
                             else if (symbols[j]=='/'){
                                 result[i]/=num[i][k];
                             }
+                            
+                            
                         }
-                        j++;
+                        
+                        cout<<symbols[j];
                         
                         cout<<"result:"<<result[i]<<" sign:"<<sign<<endl;
                         
@@ -145,8 +150,8 @@ int main()
 //                    for (int i=0  ; i<symbols.size(); i++) {
 //                        cout<<symbols[i]<<" ";
 //                    }
-                    
-                    
+//                    
+//                    
                 }
                 else if (undeclared){
                     cout<<"Undeclared indentifier"<<endl;
